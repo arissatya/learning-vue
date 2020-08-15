@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <title>learning vue</title>
+</head>
+
+<body>
+  <div id="app" class="container">
+    <div class="contaier m-3">
+      <h1>Coffee</h1>
+      <button class="btn btn-primary" @click="fetchData">FETCH</button>
+      <button class="btn btn-danger" @click="clearData">CLEAR</button>
+    </div>
+    <div class="row" v-if="isShow">
+      <div class="card col-4" v-for="data in fetchedData">
+        <img class="card-img-top" :src="data.img" :alt="data.img">
+        <div class="card-body">
+          <h5 class="card-title">{{data.title}}</h5>
+          <p class="card-text">{{data.content}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
